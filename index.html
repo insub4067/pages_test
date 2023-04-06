@@ -9,9 +9,11 @@
         function toNative() {
             try{
                 var jsonObject = {
-                    "function": "openWebView",
-                    "parameters": { 
-                        "url": "https://www.naver.com"
+                    function: "openWebView",
+                    parameters: { 
+                        url: "https://www.naver.com",
+                        age: 12,
+                        has: true
                     }
                 }
                 window.webkit.messageHandlers.toNative.postMessage(jsonObject);
@@ -22,7 +24,7 @@
     </script>
 </head>
 <body>
-    <h1>TEST</h1>
+    <h1>TEST1</h1>
     <button type="button" onclick="toNative()">TO NATIVE</button>
 </body>
 </html>
