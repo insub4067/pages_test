@@ -8,14 +8,13 @@
     <script>
         function toNative() {
             try{
-                window.webkit.messageHandlers.toNative.postMessage(JSON.stringify(
-                    {
-                        function: "openWebView",
-                        parameters: {
-                            url: "https://www.naver.com"
-                        }
+                var jsonObject = {
+                    "function": "openWebView",
+                    "parameters": { 
+                        "url": "https://www.naver.com"
                     }
-                ));
+                }
+                window.webkit.messageHandlers.toNative.postMessage(jsonObject);
             } catch (err) {
                 alert(err);
             }
