@@ -5,10 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function toNative() {
+            try{
+                window.webkit.messageHandlers.toNative.postMessage(JSON.stringify(
+                    {
+                        function: "openWebView",
+                        parameters: {
+                            url: "https://www.naver.com"
+                        }
+                    }
+                ));
+            } catch (err) {
+                alert(err);
+            }
+        }
+    </script>
 </head>
 <body>
-    <div>
-        TEST
-    </div>
+    <h1>The button Element</h1>
+    <button type="button" onclick="toNative()">Click Me!</button>
 </body>
 </html>
+
